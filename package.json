@@ -1,0 +1,82 @@
+{
+  "_from": "tanukit@0.1.0",
+  "_id": "tanukit@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-0d7GNW1PY4ud8TWxdNcP6Cc8Bu7MxcntD/RRLGWuiw/s0a9P+XlH/6QoOIrmbj6o8WWJzJYhytiu9nFjTszk1g==",
+  "_location": "/tanukit",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "tanukit@0.1.0",
+    "name": "tanukit",
+    "escapedName": "tanukit",
+    "rawSpec": "0.1.0",
+    "saveSpec": null,
+    "fetchSpec": "0.1.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/tanukit/-/tanukit-0.1.0.tgz",
+  "_shasum": "ddccb7436ebe3e21bf47afe01d3c43a296b70243",
+  "_spec": "tanukit@0.1.0",
+  "_where": "/Users/jthomas/Desktop",
+  "author": {
+    "name": "Jeremy Thomas",
+    "email": "bbxdesign@gmail.com",
+    "url": "https://jgthms.com"
+  },
+  "bugs": {
+    "url": "https://github.com/jgthms/tanukit/issues"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "Modern CSS framework based on Flexbox",
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.2",
+    "rimraf": "^3.0.2"
+  },
+  "files": [
+    "css",
+    "sass",
+    "tanukit.sass",
+    "LICENSE",
+    "README.md"
+  ],
+  "homepage": "https://tanukit.tanuki.works",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "license": "MIT",
+  "main": "tanukit.sass",
+  "name": "tanukit",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TanukiHQ/tanukit.git"
+  },
+  "scripts": {
+    "build": "npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/tanukit.css css/tanukit.css",
+    "build-cleancss": "cleancss -o css/tanukit.min.css css/tanukit.css",
+    "build-sass": "node-sass --output-style expanded --source-map true tanukit.sass css/tanukit.css",
+    "clean": "rimraf css",
+    "deploy": "npm run clean && npm run build && npm run rtl",
+    "rtl": "npm run rtl-sass && npm run rtl-autoprefix && npm run rtl-cleancss",
+    "rtl-autoprefix": "postcss --use autoprefixer --map false --output css/tanukit-rtl.css css/tanukit-rtl.css",
+    "rtl-cleancss": "cleancss -o css/tanukit-rtl.min.css css/tanukit-rtl.css",
+    "rtl-sass": "node-sass --output-style expanded --source-map true tanukit-rtl.sass css/tanukit-rtl.css",
+    "start": "npm run build-sass -- --watch"
+  },
+  "style": "tanukit/css/tanukit.min.css",
+  "unpkg": "css/tanukit.css",
+  "version": "0.1.0"
+}
